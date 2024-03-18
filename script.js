@@ -1,54 +1,4 @@
-/*// var d = require('./script2');
 
-// var qoutes = require('qoutes');
-
-// console.log(d);
-
-
-
-
-
-// // usage
-// var oneLinerJoke = require('one-liner-joke');
-
-
-// console.log(oneLinerJoke.getRandomJoke());
-
-//express framework for node js
-// express ka use case  => routiing
-
-// routing => https://www.google.com/profile/..
-
-//   /like = like
-//   /comment = comments
-//  /profile  =  profile 
-
-//tyes  => get and post , put , patch , delete..
-
-// Get  => data is Visible
-// post => data is hidden
-
-// dynamic routing 
-
-// route parameters ->
-// to make any route dyanamicyou can use : at place to make it dynamic 
-// and to use their value use req.params
-
-
-// templates engines
- // (backend) ejs -> html
-
- // ejs set up...
-
- // 1. ejs istall => npm i  ejs
- // 2.configure ejs => app.set("view engine","ejs");
- // 3. create views folder
- // 4. in folder create ejs files
- // in place of send write render.
-*/
-
- 
-// index.js
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -56,10 +6,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
+
 app.use(bodyParser.json());
 
-// Route
+
 app.post('/bfhl', (req, res) => {
     try {
         // Extracting data from the request body
@@ -70,8 +20,8 @@ app.post('/bfhl', (req, res) => {
             return res.status(400).json({ is_success: false, error: 'Array is missing or invalid' });
         }
 
-        // Extracting required information for the response
-        const user_id = 'your_name_dob'; // Replace 'your_name_dob' with your actual name and date of birth
+        
+        const user_id = 'your_name_dob'; 
         const evenNumbers = array.filter(num => num % 2 === 0);
         const oddNumbers = array.filter(num => num % 2 !== 0);
         const alphabets = array.filter(char => typeof char === 'string' && char.match(/[a-zA-Z]/)).map(char => char.toUpperCase());
@@ -80,8 +30,8 @@ app.post('/bfhl', (req, res) => {
         const response = {
             is_success: true,
             user_id,
-            email_id: 'your_email@example.com', // Replace with your email
-            college_roll_number: '12345', // Replace with your college roll number
+            email_id: 'your_email@example.com', 
+            college_roll_number: '12345', 
             even_numbers: evenNumbers,
             odd_numbers: oddNumbers,
             alphabets: alphabets
@@ -95,7 +45,7 @@ app.post('/bfhl', (req, res) => {
     }
 });
 
-// Starting the server
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
